@@ -22,7 +22,9 @@ else:
 print('Reading file {}'.format(xlsname))
 xls = xlrd.open_workbook(xlsname)
 sheetnames = xls.sheet_names()
-for n in range(0,xls.nsheets):
+numsheets = xls.nsheets
+writenum = 0
+for n in range(0,numsheets):
     print('Reading sheet {}'.format(sheetnames[n]))
     sheet = xls.sheet_by_name(sheetnames[n])
     tsvname = '{}.tsv'.format(sheetnames[n].replace(' ','_'))
@@ -31,8 +33,11 @@ for n in range(0,xls.nsheets):
         print('File exists. Nothing to do.')
         continue
     with open(outpath,'w') as tsv:
+        writenum += 1
         print('Writing into file {}'.format(outpath))
         wout = csv.writer(tsv, delimiter = '\t')
         for row in range(0,sheet.nrows):
             wout.writerow(sheet.row_values(row))
+print('Total number of sheets found {}'.format(numsheets))
+print('Total number of sheets converted {}'.format(writenum))
 print('Done')
