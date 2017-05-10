@@ -30,7 +30,7 @@ def convertXlsxToTsv(workbook):
             wrow = []
             for col in range(0, sheet.ncols):
                 if sheet.cell(row,col).ctype == xlrd.XL_CELL_DATE:
-                    date = datetime.datetime.strptime(str(datetime.datetime(1899, 12, 30) + datetime.timedelta(int(sheet.cell_value(row,col))))[:10], '%Y-%m-%d').strftime('%d/%m/%Y')
+                    date = datetime.datetime.strptime(str(datetime.datetime(1899, 12, 30) + datetime.timedelta(int(sheet.cell_value(row,col))))[:10], '%Y-%m-%d').strftime('%m/%d/%Y')
                     wrow.append(date)
                 else:
                     wrow.append(str(sheet.cell_value(row,col)))
