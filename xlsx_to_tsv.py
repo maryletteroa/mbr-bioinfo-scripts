@@ -45,7 +45,7 @@ for n in range(0,numsheets):
                 value = date
                 wrow.append(date)
             else:
-                wrow.append(sheet.cell_value(row,col))
+                wrow.append(str(sheet.cell_value(row,col)))
         srow = '\t'.join(wrow)
         tsv.write(srow +'\n')
 tsv.close()
