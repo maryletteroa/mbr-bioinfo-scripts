@@ -1,5 +1,10 @@
 #!/usr/bin/env python
 ## mbr
+'''
+@MaryletteRoa
+Prepares contigs for NCBI (Genomes) submission
+- could be improved
+'''
 
 from sys import argv, exit
 

@@ -1,4 +1,8 @@
 #!/usr/bin/env python
+'''
+@MaryletteRoa
+'''
+
 from sys import argv,exit
 from Bio import SeqIO
 try: inf=open(argv[1])

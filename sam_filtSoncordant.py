@@ -2,9 +2,14 @@
 
 from sys import argv, exit
 from os import system
+'''
+@MaryletteRoa
+Filters concordant sam files
+Requires samtools
+'''
 
 help = """
-Usage: ./filt_concordant.py <sequence.sam>
+Usage: foo.py <sequence.sam>
 """
 
 try: argv[1]

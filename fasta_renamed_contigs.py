@@ -1,5 +1,10 @@
 #!/usr/bin/env python
 ## mbr
+'''
+@MaryletteRoa
+Rename contigs by <tag># where # is consecutive
+could be used to prepare contigs for NCBI submission
+'''
 
 from sys import argv, exit
 

@@ -1,11 +1,15 @@
 #!/usr/bin/env python
+'''
+@MaryletteRoa
+'''
 
 from sys import argv, exit
 
 
 try: argv[1], argv[2], argv[3]
 except IndexError:
-   print('food.py <seq.fasta> <header> <prefix>.single.fas')
+   print('foo.py <seq.fasta> <header> <prefix>.single.fas')
+   print(' Combines multifastfile into one fasta file')
    exit()
 
 outf = open(argv[3]+'.single.fasta','w')

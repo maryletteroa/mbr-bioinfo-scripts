@@ -1,4 +1,10 @@
 #!/usr/bin/env python
+'''
+@MaryletteRoa
+
+Counts the bp in fastq files
+Produces a total count of all fastq supplied
+'''
 
 from sys import argv, exit
 
