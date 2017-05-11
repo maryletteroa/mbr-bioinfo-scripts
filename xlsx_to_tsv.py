@@ -9,8 +9,15 @@ import xlrd, csv, os, datetime
 
 
 def convertXlsxToTsv(workbook):
-    print('Reading file {}'.format(xlsname))
+    outdir = '_'.join(workbook.split('.')).replace(' ','_')
+    # create an output directory
+    # if exists, do not create
+    if not os.path.exists(outdir):
+        os.makedirs(outdir)
+    else:
+        pass
     xls = xlrd.open_workbook(xlsname)
+    print('Reading file {}'.format(xlsname))
     sheetnames = xls.sheet_names()
     numsheets = xls.nsheets
     writenum = 0
@@ -19,6 +26,10 @@ def convertXlsxToTsv(workbook):
         sheet = xls.sheet_by_name(sheetnames[n])
         tsvname = '{}.tsv'.format(sheetnames[n].replace(' ','_'))
         outpath = os.path.join(outdir,tsvname)
+        # if a tsv exists, do nothing
+        # hence, erase existing tsvs of the same name as outputs
+        # to generate new tsvs .. this is to avoid overwriting
+        # the previous tsv
         if os.path.exists(outpath):
             print('File exists. Nothing to do.')
             continue
@@ -29,8 +40,14 @@ def convertXlsxToTsv(workbook):
         for row in range(0,sheet.nrows):
             wrow = []
             for col in range(0, sheet.ncols):
-                if sheet.cell(row,col).ctype == xlrd.XL_CELL_DATE:
-                    date = datetime.datetime.strptime(str(datetime.datetime(1899, 12, 30) + datetime.timedelta(int(sheet.cell_value(row,col))))[:10], '%Y-%m-%d').strftime('%m/%d/%Y')
+                if sheet.cell(row,col).ctype == xlrd.XL_CELL_DATE: 
+                # Important! make sure that the dates in the excel are in the Date format, if in Text format, the script will return the value as is
+                # # could be broken down to more variables
+                    # date = datetime.datetime.strptime(str(datetime.datetime(1899, 12, 30) + datetime.timedelta(int(sheet.cell_value(row,col))))[:10], '%Y-%m-%d').strftime('%m/%d/%Y')
+                    reference_date = datetime.datetime(1899, 12, 30)
+                    converted_date = datetime.timedelta(int(sheet.cell_value(row,col)))
+                    date = datetime.datetime.strptime(str(reference_date + converted_date)[:10], '%Y-%m-%d').strftime('%m/%d/%Y')
+
                     wrow.append(date)
                 else:
                     wrow.append(str(sheet.cell_value(row,col)))
@@ -48,12 +65,11 @@ if __name__ == '__main__' :
     except IndexError:
         print('Usage: foo.py <file.xlsx>')
         print(' Converts an *.xlsx file to *.tsv files per sheet')
+        print('  Hidden cells and sheets are also printed out')
         sys.exit()
 
-    outdir = '_'.join(xlsname.split('.')).replace(' ','_')
-    if not os.path.exists(outdir):
-        os.makedirs(outdir)
-    else:
-        pass
-
-    convertXlsxToTsv(xlsname)
+    try: 
+        convertXlsxToTsv(xlsname)
+    except FileNotFoundError:
+        print('Error: Make sure {} exists!'.format(xlsname))
+        exit()
