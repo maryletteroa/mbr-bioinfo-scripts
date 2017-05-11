@@ -8,7 +8,6 @@ from Bio import SeqIO
 try: inf=open(argv[1])
 except IndexError:
    print("Counts length of multiFa")
-   print("@maryletteroa")
    print("./foo.py <seq.fa>")
    exit()
 reads=SeqIO.parse(inf,"fasta")

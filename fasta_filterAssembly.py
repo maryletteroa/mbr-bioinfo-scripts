@@ -9,7 +9,6 @@ try:
    fasta,prefix,cutoff=argv[1],argv[2],argv[3]
 except IndexError:
    print("Filters sequences based on length")
-   print("@maryletteroa")
    print("./filterAssembly.py <seq.fa> <prefix> <len>")
    exit()
 

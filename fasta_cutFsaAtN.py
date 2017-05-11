@@ -7,7 +7,6 @@ from sys import argv,exit
 try: fsa,prefix = argv[1],argv[2]
 except IndexError:
    print("Cuts Pseudocontig (e.g. from CONTIGuator) at N's,generating a multifa file")
-   print("@marylette")
    print("./cutFasAtN.py <seq.fasta> <prefix>")
    exit()
 

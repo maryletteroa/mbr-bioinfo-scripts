@@ -9,7 +9,6 @@ try:
    pairnum = argv[2]
 except IndexError:
    print("Formats illumina fastqs with /1 or /2 in headers of PE reads")
-   print("@maryletteroa")
    print("Req: <sample.fq> <1|2>")
    exit()
 

@@ -1,6 +1,9 @@
 #!/usr/bin/env python
-#author: mbroa
 #date: 14 March 2015
+
+'''
+@MaryletteRoa
+'''
 
 from sys import argv, exit
 from Bio import SeqIO

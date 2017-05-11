@@ -8,7 +8,6 @@ from sys import argv, exit
 try: argv[1]
 except IndexError:
    print("Outputs min, max, and average alignment coverage")
-   print("@maryletteroa")
    print("Usage: foo.py <sample.cov>")
    print("   <sample.cov> is samtools depth output")
    exit()
