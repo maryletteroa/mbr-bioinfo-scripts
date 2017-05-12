@@ -4,12 +4,16 @@
 Splits fastq files in smaller chuncks
 - could be improved
 '''
-from sys import argv
+from sys import argv, exit
 
-# the number of splits 
-num_split = int(argv[1])
-# input as many fastqs as you like
-fastqs = argv[2:]
+try:
+   # the number of splits 
+   num_split = int(argv[1])
+   # input as many fastqs as you like
+   fastqs = argv[2:]
+except IndexError:
+   print('foo.py <number of splits> <fastq> [fastq .. ]')
+   exit()
 
 for fastq in fastqs:
    infile = open(fastq).readlines()
