@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 '''
-'@MaryletteRoa'
+@MaryletteRoa
 #===============================================================================
 # script calculates N50 value for assembly, only calculate for contigs >= 500bp
 #===============================================================================
