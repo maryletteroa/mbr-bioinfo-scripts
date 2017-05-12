@@ -1,4 +1,11 @@
 #!/usr/bin/python
+'''
+@MaryletteRoa
+'''
+
+import sys
+sys.path.append('/mnt/e/virtual_envs/windowsEnv/lib/python3.4/site-packages')
+
 
 from Bio import SeqIO
 from BCBio import GFF
