@@ -6,8 +6,13 @@
 #===============================================================================
 '''
 
-from sys import argv
-contigsMultifasta = argv[1]
+from sys import argv, exit
+
+try:
+	contigsMultifasta = argv[1]
+except IndexError:
+	print('foo.py <assembly.contigs.fasta>')
+	exit()
 #header = argv[2]
 
 contigsLength = []
