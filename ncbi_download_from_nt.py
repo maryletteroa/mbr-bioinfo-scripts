@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 '''
-@Marylette Roa
+@MaryletteRoa
 ! needs more work on this script
 '''
 
