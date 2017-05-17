@@ -1,12 +1,10 @@
-# Bionformatics scripts
-
-## About
+# About
 This repository contains a collection of simple scripts used to parse and/or manipulate bioinformatics related datasets.
 
-## Under construction
+# Under construction
 A lot of these scripts are still under development or evolving, so please use with caution.
 
-## Support
+# Support
 For feedback, please contact @MaryletteRoa (Twitter).
 
 
