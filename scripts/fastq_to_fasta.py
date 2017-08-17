@@ -19,4 +19,7 @@ fastq_handle = open(args.input,"rU")
 fastq_record = SeqIO.parse(fastq_handle,"fastq")
 output = open(args.output,"w")
 for record in fastq_record:
-	output.write(">"+record.name+"\n"+record.seq + '\n')
+#       output.write(">"+record.name+"\n"+record.seq + '\n')
+        string = f'>{record.name}\n{record.seq}\n'
+        output.write(string)
+output.close()
