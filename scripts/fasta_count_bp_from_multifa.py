@@ -16,9 +16,9 @@ for read in reads:
     length = len(read.seq)
     seqlen=seqlen+length
     if 'each' in argv:
-        print(read.description + ':' + length)
+        print(read.description + ':' + str(length))
     else:
         pass
-print('total assembly size:' + seqlen)
+print('total assembly size:' + str(seqlen))
 
 
