@@ -8,9 +8,17 @@ from Bio import SeqIO
 try: inf=open(argv[1])
 except IndexError:
    print("Counts length of multiFa")
-   print("./foo.py <seq.fa>")
+   print("./foo.py <seq.fa> [each]")
    exit()
 reads=SeqIO.parse(inf,"fasta")
 seqlen=0
-for read in reads: seqlen=seqlen+len(read.seq)
-print(seqlen)
+for read in reads:
+    length = len(read.seq)
+    seqlen=seqlen+length
+    if 'each' in argv:
+        print(read.description + ':' + length)
+    else:
+        pass
+print('total assembly size:' + seqlen)
+
+
