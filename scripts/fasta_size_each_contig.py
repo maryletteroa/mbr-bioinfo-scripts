@@ -6,6 +6,8 @@ Marylette B. Roa
 4-September-2017
 '''
 
+from sys import argv, exit
+
 try:
     argv[1]
 except IndexError:

@@ -9,9 +9,9 @@
 from sys import argv, exit
 
 try:
-	contigsMultifasta = argv[1]
+	contigsMultifasta, length_filter = argv[1], argv[2]
 except IndexError:
-	print('foo.py <assembly.contigs.fasta>')
+	print('foo.py <assembly.contigs.fasta> <cutoff bp>')
 	exit()
 #header = argv[2]
 
@@ -21,7 +21,7 @@ Sum = 0
 from Bio import SeqIO
 for seq_record in SeqIO.parse(open(contigsMultifasta), "fasta"):
     seqlen = len(seq_record.seq)
-    if seqlen >= 500:
+    if seqlen >= int(length_filter):
        seqlen_list.append(seqlen)
        Sum += len(seq_record.seq)
        contigsLength.append(len(seq_record.seq))
