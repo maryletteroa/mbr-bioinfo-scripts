@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3.6
 #date: 14 March 2015
 
 '''
@@ -44,7 +44,7 @@ infile=open(nodenames,"r").readlines()
 
 for line in infile:
     key=line.strip("\n")
-    try: print(">{0}\n{1}\n".format(key,assemblydict[key]))
+    try: print(">{0}\n{1}".format(key,assemblydict[key]))
     except KeyError:
 #	print "{} NOT FOUND".format(key)
        pass

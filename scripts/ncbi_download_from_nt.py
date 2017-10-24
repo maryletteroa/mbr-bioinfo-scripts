@@ -1,54 +1,51 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3.6
 '''
 @MaryletteRoa
 ! needs more work on this script
 '''
 
-import sys
-sys.path.append('/mnt/e/virtual_envs/windowsEnv/lib/python3.4/site-packages')
 
 from Bio import Entrez
 from Bio import SeqIO
 from os import system
-from sys import argv
+from sys import argv, exit
 
 Entrez.email='hello@world.com' #required for Entrez
 
-openFiltered=open("filtered.csv")
+try:
+    openFiltered=open(argv[1])
+except IndexError:
+    help = f'./ncbi_download_from_nt.py <sequence.gi.txt>'
+    print(help)
+    exit()
 
 
 allData = openFiltered.readlines()
 
-giNums =  allData[1].split(';')[0]
-
-for num in range(2,len(allData)):
-	giNums = giNums + ',' + allData[num].split(';')[0]
-
-giNums = giNums.split(',')
-
+giNums = [data.strip() for data in allData]
 
 stopIter = 0
 loopIndex = 0
 
 #download 100 records at a time
 while stopIter < len(giNums):
-	print "Downloading {0}/{1}".format(stopIter+1,len(giNums))
+	print( "Downloading {0}/{1}".format(stopIter+1,len(giNums)))
 	downloadFasta = Entrez.efetch(db="nucleotide", rettype="fasta", id="{0}".format(",".join(index for index in giNums[stopIter:stopIter+100])))
 	
 	outputFasta = open("sequence_{0}.fasta".format(loopIndex),'w') #output directory
-	output.write(FastadownloadFasta.read() + '\n') #this is how you read/write directly from Entrez download
+	outputFasta.write(downloadFasta.read() + '\n') #this is how you read/write directly from Entrez download
 	
 	stopIter = stopIter + 100
 	loopIndex = loopIndex + 1
 
 outputFasta.close()
-print "Downloaded {0}/{0}".format(len(giNums),len(giNums))
+print( "Downloaded {0}/{0}".format(len(giNums),len(giNums)))
 
 #concatenate metafiles into a single file
-print "Writing into one multi-FASTA file."
+print( "Writing into one multi-FASTA file.")
 system("cat sequence_*.fasta > sequence.fasta")
 
 #delete metafiles
 system("rm sequence_*.fasta")
 
-print "Done."
+print( "Done.")
