@@ -6,6 +6,10 @@ This is a collection of simple scripts used to parse and/or manipulate bioinform
 
 Scripts are named `<file_format>_<description>`. `file_format`s are standard data formats in bioinfo and to which these scripts are applied.
 
+# Dependencis
+`python 3.6` or greater  
+[Biopython](http://biopython.org/)
+
 
 # Attribution
 Please contact @MaryletteRoa (Twitter).
