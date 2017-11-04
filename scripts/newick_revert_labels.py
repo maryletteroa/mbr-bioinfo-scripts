@@ -3,8 +3,8 @@
 # -*- coding: utf-8 -*-
 # @Author: Marylette Roa
 # @Date:   2017-09-24 22:35:54
-# @Last Modified by:   marylette
-# @Last Modified time: 2017-10-30 15:32:48
+# @Last Modified by:   Marylette Roa
+# @Last Modified time: 2017-11-04 13:30:08
 
 from sys import argv, exit
 
@@ -17,7 +17,7 @@ def change_tree(tree_file, headers):
     with open(tree_file) as inf:
         tree = inf.read()
         for header in headers:
-            tree = tree.replace(header,headers[header])
+            tree = tree.replace(header+':',headers[header]+':')
     return(tree)
 
 
