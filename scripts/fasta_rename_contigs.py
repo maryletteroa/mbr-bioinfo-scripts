@@ -1,9 +1,11 @@
+#!/usr/bin/env python3.6
+
 # -*- coding: utf-8 -*-
 # @Author: Marylette Roa
 # @Date:   2017-11-04 16:12:26
 # @Last Modified by:   Marylette Roa
-# @Last Modified time: 2017-11-04 16:15:20
-#!/usr/bin/env python3.6
+# @Last Modified time: 2017-11-04 16:17:47
+
 
 
 from sys import argv, exit
@@ -17,7 +19,7 @@ except IndexError:
 
 headercount = 0
 outf_name = '.'.join(argv[1].split('.')[0:-1])  + '.renamed.fasta'
-outf = open(argv[1],'w')
+outf = open(outf_name,'w')
 
 with open(fasta_file) as inf:
     sequences = [line for line in inf.read().split('>')[1:]]
