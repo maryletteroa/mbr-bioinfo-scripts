@@ -4,7 +4,7 @@
 # @Author: Marylette Roa
 # @Date:   2017-11-04 16:12:26
 # @Last Modified by:   Marylette Roa
-# @Last Modified time: 2017-11-04 16:17:47
+# @Last Modified time: 2017-11-04 16:20:04
 
 
 
@@ -27,8 +27,8 @@ with open(fasta_file) as inf:
 
 counter = 0
 for fasta in fastas:
-    counter += 0
-    header = 'contig_{counter}'
+    counter += 1
+    header = f'contig_{counter}'
     sequence = fastas[fasta]
     fasta_p = f'>{header}\n{sequence}'
     print(fasta_p, file=outf, end='\n')
