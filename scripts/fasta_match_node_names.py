@@ -46,5 +46,5 @@ for line in infile:
     key=line.strip("\n")
     try: print(">{0}\n{1}".format(key,assemblydict[key]))
     except KeyError:
-#	print "{} NOT FOUND".format(key)
-       pass
+        # print("{} NOT FOUND".format(key))
+        pass

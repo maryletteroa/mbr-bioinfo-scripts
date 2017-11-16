@@ -4,7 +4,7 @@
 # @Author: Marylette Roa
 # @Date:   2017-11-04 16:12:26
 # @Last Modified by:   Marylette Roa
-# @Last Modified time: 2017-11-04 16:33:55
+# @Last Modified time: 2017-11-04 17:04:15
 
 
 
@@ -32,7 +32,7 @@ map_outf = open(f'{map_outf_name}','w')
 counter = 0
 for fasta in fastas:
     counter += 1
-    header = f'contig_{counter}'
+    header = f'ctg{counter}'
     sequence = fastas[fasta]
     fasta_p = f'>{header}\n{sequence}'
     map_p = f'{fasta}\t{header}'
