@@ -4,7 +4,7 @@
 # @Author: marylette
 # @Date:   2017-11-16 12:31:26
 # @Last Modified by:   marylette
-# @Last Modified time: 2017-11-16 12:30:19
+# @Last Modified time: 2017-11-16 12:39:56
 
 
 from sys import argv, exit
@@ -15,7 +15,7 @@ def break_fasta(fasta_file,num_contigs):
         mult_fasta = [line for line in inf.read().split('>')[1:]]
     num_seqs = len(mult_fasta)
     for num in range(0,num_seqs,num_contigs):
-        yield(mult_fasta[num:num+50])
+        yield(mult_fasta[num:num+num_contigs])
 
 
 def main():
