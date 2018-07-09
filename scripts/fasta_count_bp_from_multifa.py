@@ -5,20 +5,28 @@
 
 from sys import argv,exit
 from Bio import SeqIO
+from statistics import mean, median, mode
+
 try: inf=open(argv[1])
 except IndexError:
    print("Counts length of multiFa")
    print("./foo.py <seq.fa> [each]")
    exit()
+
 reads=SeqIO.parse(inf,"fasta")
-seqlen=0
+lengths = []
 for read in reads:
     length = len(read.seq)
-    seqlen=seqlen+length
+    lengths.append(length)
     if 'each' in argv:
-        print(read.description + ':' + str(length))
+        print(f'{read.description}: {length}')
     else:
         pass
-print('total assembly size:' + str(seqlen))
+
+print(f'Mean: {mean(lengths)}')
+print(f'Median: {median(lengths)}')
+print(f'Mode: {mode(lengths)}')
+print(f'Mean - Max: {min(lengths)} - {max(lengths)}')
+print(f'Total: {sum(lengths)}')
 
 
