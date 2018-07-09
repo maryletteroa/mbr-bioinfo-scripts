@@ -41,5 +41,5 @@ for con in contigsLength:
         N50 = con
         break
 
-print "N50,Num_contigs,Largest_contig,TotalAssemblySize"
-print "{0},{1},{2},{3}".format(str(N50),str(len(contigsLength)),str(largestContigLen),str(sum(seqlen_list)))
+print("N50,Num_contigs,Largest_contig,TotalAssemblySize")
+print("{0},{1},{2},{3}".format(str(N50),str(len(contigsLength)),str(largestContigLen),str(sum(seqlen_list))))
