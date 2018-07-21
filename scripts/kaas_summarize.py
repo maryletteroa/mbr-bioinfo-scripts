@@ -4,7 +4,7 @@
 # @Author: Marylette
 # @Date:   2018-07-10 09:12:14
 # @Last Modified by:   Marylette
-# @Last Modified time: 2018-07-21 12:42:58
+# @Last Modified time: 2018-07-21 12:43:00
 
 from sys import argv, exit
 
@@ -40,15 +40,19 @@ with open(keg_file) as inf:
                 ctg = ' '.join(line.strip().split(' ')[6:])
                 kegs[a_cat][b_cat][c_cat].append(ctg)
 
-outn = 'kaas_counts.txt'
+outn = 'kaas_summary.txt'
 outf = open(outn,'w')
 
 for k1 in kegs.keys():
     for k2 in kegs[k1].keys():
         for k3 in kegs[k1][k2].keys():
-            num_cds = len(kegs[k1][k2][k3])
+            cdss = kegs[k1][k2][k3]
+            num_cds = len(cdss)
             if num_cds != 0: ## do not consider categories without contig assignments
-                outp = '\t'.join([k1, k2, k3, str(num_cds)])
-                print(outp, file=outf)
+                for cds in cdss:
+                    cds_name = cds.split(';')[0]
+                    function = ';'.join(cds.split(';')[1:])
+                    outp = '\t'.join([cds_name, k1, k2, k3, function])
+                    print(outp, file=outf)
 print(f'Results: {outn}')
 outf.close()
