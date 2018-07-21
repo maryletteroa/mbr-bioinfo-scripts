@@ -1,9 +1,9 @@
-#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Author: Marylette B. Roa
+# @Date:   2018-03-08 20:16:26
+# @Last Modified by:   Marylette B. Roa
+# @Last Modified time: 2018-07-18 10:35:01
 
-'''
-@MaryletteRoa
-6-July-2017
-'''
 
 from sys import argv, exit
 

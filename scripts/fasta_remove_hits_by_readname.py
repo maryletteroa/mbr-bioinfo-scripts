@@ -1,9 +1,9 @@
-#!/usr/bin/env python
-#date: 22 August 2017
+# -*- coding: utf-8 -*-
+# @Author: Marylette B. Roa
+# @Date:   2018-03-08 20:16:26
+# @Last Modified by:   Marylette B. Roa
+# @Last Modified time: 2018-07-18 10:33:38
 
-'''
-@MaryletteRoa
-'''
 
 from sys import argv, exit
 from Bio import SeqIO

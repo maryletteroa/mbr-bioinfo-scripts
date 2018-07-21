@@ -1,10 +1,8 @@
-#!/usr/bin/env python3.6
-
 # -*- coding: utf-8 -*-
 # @Author: Marylette
 # @Date:   2018-07-10 09:12:14
 # @Last Modified by:   Marylette
-# @Last Modified time: 2018-07-10 09:58:33
+# @Last Modified time: 2018-07-18 10:36:51
 
 from sys import argv, exit
 

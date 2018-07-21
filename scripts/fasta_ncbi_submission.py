@@ -1,10 +1,9 @@
-#!/usr/bin/env python
-## mbr
-'''
-@MaryletteRoa
-Prepares contigs for NCBI (Genomes) submission
-- could be improved
-'''
+# -*- coding: utf-8 -*-
+# @Author: Marylette B. Roa
+# @Date:   2018-03-08 20:16:26
+# @Last Modified by:   Marylette B. Roa
+# @Last Modified time: 2018-07-18 10:33:39
+
 
 from sys import argv, exit
 

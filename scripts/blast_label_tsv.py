@@ -1,4 +1,13 @@
+# -*- coding: utf-8 -*-
+# @Author: Marylette B. Roa
+# @Date:   2018-07-09 13:13:22
+# @Last Modified by:   Marylette B. Roa
+# @Last Modified time: 2018-07-18 10:30:39
+
 from sys import argv, exit
+import os
+
+script_name = os.path.basename(__file__)
 
 def get_header_desc(headers):
     with open(headers) as inf:
@@ -17,7 +26,7 @@ def acc2desc(headers,blast):
 def main():
     if len(argv) != 3:
         about = 'Adds header labels to blast tsv output'
-        usage = f'Usage: {argv[0]} <headers.txt> <blast.tsv>'
+        usage = f'Usage: {script_name} <headers.txt> <blast.tsv>'
         print(f'{about}\n{usage}')
         exit()
     else:

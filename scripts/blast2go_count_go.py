@@ -1,20 +1,22 @@
-#!/usr/bin/env python3.6
-
 # -*- coding: utf-8 -*-
-# @Author: Marylette
-# @Date:   2018-07-09 15:57:52
-# @Last Modified by:   Marylette
-# @Last Modified time: 2018-07-09 16:39:21
+# @Author: Marylette B. Roa
+# @Date:   2018-07-09 17:03:01
+# @Last Modified by:   Marylette B. Roa
+# @Last Modified time: 2018-07-18 10:29:48
+
 
 
 #  grep 'ANNOTATED' blast2go_go_table_20180709_1217.txt | grep 'structural constituent of ribosome' | rev | cut -f 6 | rev > gos.txt
 
 from sys import argv, exit
+import os
+
+script_name = os.path.basename(__file__)
 
 try:
 	blast2go_tsv = argv[1]
 except IndexError:
-	help = './blast2go_count_go.py <blast2go.tsv>'
+	help = f'{script_name} <blast2go.tsv>'
 	print(help)
 	exit()
 

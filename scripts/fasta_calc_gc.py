@@ -1,4 +1,10 @@
-#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Author: Marylette B. Roa
+# @Date:   2018-07-09 13:20:34
+# @Last Modified by:   Marylette B. Roa
+# @Last Modified time: 2018-07-18 10:32:14
+
+
 from sys import argv, exit
 import statistics
 

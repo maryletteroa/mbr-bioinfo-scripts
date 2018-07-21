@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+# @Author: Marylette B. Roa
+# @Date:   2018-03-09 13:02:16
+# @Last Modified by:   Marylette B. Roa
+# @Last Modified time: 2018-07-18 10:31:12
+
 from sys import argv, exit
 from Bio import SeqIO
 

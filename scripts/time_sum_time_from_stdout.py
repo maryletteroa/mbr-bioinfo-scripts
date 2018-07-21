@@ -1,7 +1,10 @@
-#!/usr/bin/env python
-"""
-@MaryletteRoa
+# -*- coding: utf-8 -*-
+# @Author: Marylette B. Roa
+# @Date:   2018-03-08 20:16:26
+# @Last Modified by:   Marylette B. Roa
+# @Last Modified time: 2018-07-18 10:37:43
 
+"""
 Usage: cat *timer | ./sumtime.py
 
 Prints realtime in seconds.

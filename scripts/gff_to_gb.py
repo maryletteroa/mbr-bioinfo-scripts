@@ -1,7 +1,8 @@
-#!/usr/bin/env python
-'''
-@MaryletteRoa
-'''
+# -*- coding: utf-8 -*-
+# @Author: Marylette B. Roa
+# @Date:   2018-03-08 20:16:26
+# @Last Modified by:   Marylette B. Roa
+# @Last Modified time: 2018-07-18 10:36:47
 
 import sys
 sys.path.append('/mnt/e/virtual_envs/windowsEnv/lib/python3.4/site-packages')
