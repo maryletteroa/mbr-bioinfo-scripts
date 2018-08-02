@@ -2,7 +2,7 @@
 # @Author: Marylette B. Roa
 # @Date:   2018-07-09 17:03:01
 # @Last Modified by:   Marylette B. Roa
-# @Last Modified time: 2018-07-18 10:29:48
+# @Last Modified time: 2018-08-02 18:21:49
 
 
 
@@ -23,7 +23,7 @@ except IndexError:
 gos = []
 with open(blast2go_tsv) as inf:
     for line in inf.readlines()[1:]:
-        if 'ANNOTATED' in line:
+        if 'MAPPED' in line:
             names =  line.strip().split('\t')[10]
             for go in names.split(';'):
                 category = go.split(':')[0].lstrip()
