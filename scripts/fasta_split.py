@@ -2,7 +2,7 @@
 # @Author: Marylette B. Roa
 # @Date:   2020-11-22 11:02:51
 # @Last Modified by:   Marylette B. Roa
-# @Last Modified time: 2020-11-22 11:26:17
+# @Last Modified time: 2020-11-22 11:32:18
 
 
 from sys import  argv, exit
@@ -12,7 +12,7 @@ try:
     num_files = argv[2]
     outn = argv[3]
 except IndexError:
-    print("<usage goes here>")
+    print("foo.py <in.fasta> <num_of_files_to_print> <prefix_of_output_files> ")
     exit()
 
 
@@ -25,7 +25,6 @@ with open(inn) as inf:
         file_counter +=1
         outn_ = f"{outn}_{file_counter}.fasta"
         outf = open(f"{outn_}", "w")
-        # print(fastas[r:r+seq_per_file])
         sequences_to_file = ">"+">".join(fastas[r:r+seq_per_file]).rstrip()
         print(sequences_to_file, file=outf)
         print(f"Output: {outn_}")
