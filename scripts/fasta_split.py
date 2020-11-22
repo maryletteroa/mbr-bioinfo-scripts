@@ -2,7 +2,7 @@
 # @Author: Marylette B. Roa
 # @Date:   2020-11-22 11:02:51
 # @Last Modified by:   Marylette B. Roa
-# @Last Modified time: 2020-11-22 11:57:04
+# @Last Modified time: 2020-11-22 11:59:12
 
 
 from sys import  argv, exit
@@ -24,7 +24,7 @@ with open(inn) as inf:
     for r in range(0, total_seqs, seq_per_file):
         if file_counter < num_files:
             file_counter +=1
-            outn_ = f"{outn}_{file_counter}.fasta"
+            outn_ = f"{outn}_part_{file_counter}.fasta"
             outf = open(f"{outn_}", "w")
             sequences_to_file = ">"+">".join(fastas[r:r+seq_per_file]).rstrip()
             print(sequences_to_file, file=outf)
