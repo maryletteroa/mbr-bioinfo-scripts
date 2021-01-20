@@ -2,7 +2,7 @@
 # @Author: Marylette B. Roa
 # @Date:   2018-07-09 13:16:12
 # @Last Modified by:   Marylette B. Roa
-# @Last Modified time: 2018-07-19 10:44:04
+# @Last Modified time: 202-01-20 19:23:00
 
 
 from sys import argv, exit
@@ -27,6 +27,7 @@ for seq_record in SeqIO.parse(open(contigsMultifasta), "fasta"):
        contigsLength.append(len(seq_record.seq))
 
 largestContigLen=max(seqlen_list)
+shortestContigLen=min(seqlen_list)
 mean_len = mean(seqlen_list)
 median_len = median(seqlen_list)
 mode_len = mode(seqlen_list)
@@ -46,5 +47,5 @@ for con in contigsLength:
         N50 = con
         break
 
-print("N50,Mean,Median,Mode,Num_contigs,Largest_contig,TotalAssemblySize")
-print(f'{N50},{mean_len},{median_len},{mode_len},{num_len},{largestContigLen},{total_len}')
+print("N50,Mean,Median,Mode,Num_contigs,Shortest_Contig,Largest_contig,TotalAssemblySize")
+print(f'{N50},{mean_len},{median_len},{mode_len},{num_len},{shortestContigLen},{largestContigLen},{total_len}')
